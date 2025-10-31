@@ -1,6 +1,6 @@
 import '../pages/index.css';
-import { createCard, deleteCard, likeCard } from '../../../../Desktop/mesto-project-ff/src/scripts/card.js';
-import { openModal, closeModal, setupOverlayClose } from '../../../../Desktop/mesto-project-ff/src/scripts/modal.js';
+import { createCard, deleteCard, likeCard } from './card';
+import { openModal, closeModal, setupOverlayClose } from './modal';
 import { initialCards } from './cards.js';
 
 import logo from '../images/logo.svg';
