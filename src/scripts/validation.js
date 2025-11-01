@@ -14,9 +14,9 @@ const hideInputError = (formElement, inputElement, config) => {
 
 export const checkInputValidity = (formElement, inputElement, config) => {
   if (inputElement.validity.valueMissing) {
-    showInputError(formElement, inputElement, 'Вы пропустили это поле', config);
+    showInputError(formElement, inputElement, inputElement.validationMessage, config);
   } else if (inputElement.validity.typeMismatch && inputElement.type === 'url') {
-    showInputError(formElement, inputElement, 'Введите адрес сайта', config);
+    showInputError(formElement, inputElement, inputElement.validationMessage, config);
   } else if (!inputElement.validity.valid) {
     showInputError(formElement, inputElement, inputElement.validationMessage, config);
   } else {
@@ -72,6 +72,5 @@ export const clearValidation = (formElement, config) => {
     hideInputError(formElement, inputElement, config);
   });
 
-  buttonElement.classList.add(config.inactiveButtonClass);
-  buttonElement.disabled = true;
+  toggleButtonState(inputList, buttonElement, config);
 };
